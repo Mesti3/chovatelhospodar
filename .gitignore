@@ -1,0 +1,21 @@
+# Nette
+log/*
+temp/*
+
+# Git
+!.gitignore
+
+# Apache
+!.htaccess
+
+# App
+/app/config/config.local.neon
+/www/dist
+/www/build.html
+
+# Composer
+/vendor
+
+# Yarn
+/node_modules
+yarn-error.log

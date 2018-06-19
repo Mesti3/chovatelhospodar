@@ -1,0 +1,8 @@
+version: "3.5"
+services:
+  nettpack-vue:
+    image: "misaon/alpine-nginx-php:php71"
+    ports:
+     - "80:80"
+    volumes:
+     - "./:/var/www/html:cached"
