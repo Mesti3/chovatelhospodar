@@ -16,7 +16,15 @@ class RouterFactory
 	public static function createRouter(): Nette\Application\IRouter
 	{
 		$router = new RouteList;
-		$router[] = new Route('<presenter>/<action>[/<id>]', 'Vue:default');
+
+		$api = new RouteList('Api');
+		$api[] = new Route('/api/<presenter>/<action>[/<id>]', 'SimpleAjax:test');
+		$router[] = $api;
+
+		$vue = new RouteList('Vue');
+		$vue[] = new Route('/<presenter>/<action>', 'Vue:render');
+		$router[] = $vue;
+
 		return $router;
 	}
 }

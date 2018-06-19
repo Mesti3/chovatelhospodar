@@ -1,6 +1,6 @@
 {
     "name": "misaon/nettpack-vue",
-    "description": "Nette, Vue.js and Webpack 4 web project",
+    "description": "Nette 3, Vue.js and Webpack 4 web project",
     "keywords": [
         "vue.js",
         "nette",

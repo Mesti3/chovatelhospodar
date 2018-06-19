@@ -6,13 +6,17 @@
             <h2>Nette 3, Webpack 4 and Vue.js works together with <3</h2>
         </header>
 
+        <!-- Navigation -->
         <nav>
             <router-link tag="a" active-class="is-active" to="/" exact>Welcome</router-link>
             |
             <router-link tag="a" active-class="is-active" to="/about/" exact>About</router-link>
         </nav>
+        <!-- Navigation -->
 
+        <!-- Include page content -->
         <router-view></router-view>
+        <!-- # Include page content -->
 
     </main>
 </template>
@@ -20,6 +24,10 @@
 <script>
 export default {
   name: 'App',
+  metaInfo: {
+    title: 'Welcome',
+    titleTemplate: '%s | Nettpack'
+  }
 };
 </script>
 
@@ -29,13 +37,14 @@ export default {
     $font-color: #fff;
     $primary-bg-blur: rgba(255, 255, 255, .3);
 
-    // Styles
+    // Global
     body {
         background: $bg-color;
         color: $font-color;
         font-family: 'Helvetica Neue', sans-serif;
     }
 
+    // Custom
     #app {
         &.container {
             display: block;
@@ -70,8 +79,8 @@ export default {
         }
     }
 
+    // Components
     .btn {
         font-size: 16px;
     }
-
 </style>

@@ -1,0 +1,9 @@
+{
+    "name": "Nettpack",
+    "version": "1.0.0",
+    "description": "Nette 3, Vue.js and Webpack 4 web project.",
+    "sampleUrl": "http://localhost/api",
+    "template": {
+        "forceLanguage": "en"
+    }
+}
