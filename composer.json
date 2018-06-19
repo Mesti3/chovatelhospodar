@@ -38,7 +38,8 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "composer update -o"
+            "composer update -o",
+            "yarn install"
         ]
     }
 }
