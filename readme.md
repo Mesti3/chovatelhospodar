@@ -1,6 +1,14 @@
 Nettpack-vue
 =============
 
+
+[![GitHub issues](https://img.shields.io/github/issues/misaon/nettpack-vue.svg)](https://github.com/misaon/nettpack-vue/issues)
+[![GitHub forks](https://img.shields.io/github/forks/misaon/nettpack-vue.svg)](https://github.com/misaon/nettpack-vue/network)
+[![GitHub stars](https://img.shields.io/github/stars/misaon/nettpack-vue.svg)](https://github.com/misaon/nettpack-vue/stargazers)
+[![GitHub license](https://img.shields.io/github/license/misaon/nettpack-vue.svg)](https://github.com/misaon/nettpack-vue/blob/master/LICENSE)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/misaon/nettpack-vue.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmisaon%2Fnettpack-vue)
+
+
 This is a simple pre-packaged and pre-configured application using the [Nette](https://nette.org), 
 [Docker](https://www.docker.com/), [Vue](https://vuejs.org/) and [Webpack](https://webpack.js.org/) 
 that you can use as the starting point for your new applications.
