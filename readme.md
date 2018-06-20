@@ -47,6 +47,8 @@ Generate API documentation with:
 
     $ yarn run docs
 
+API documentations will be generated into www/api-docs. You can go to **http://localhost/api-docs/** for test.
+
 ---
 
 Build your final app with:
