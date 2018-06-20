@@ -12,7 +12,7 @@ temp/*
 !.htaccess
 
 # App
-/app/config/config.local.neon
+#/app/config/config.local.neon
 /www/dist
 /www/api-docs/
 /www/build.html
