@@ -1,7 +1,7 @@
 {
     "name": "nettpack-vue",
     "version": "1.0.0",
-    "description": "Nette, Vue.js and Webpack 4 web project",
+    "description": "Nette 3, Docker, Vue and Webpack 4 web project.",
     "main": "index.js",
     "repository": "https://github.com/misaon/nettpack-vue",
     "author": "Ondřej Misák <email@ondrejmisak.cz>",
@@ -9,8 +9,10 @@
     "keywords": [
         "nette",
         "framework",
+        "docker",
         "webpack",
-        "vue"
+        "vue",
+        "api"
     ],
     "scripts": {
         "docs": "yarn run apidoc -i app/ -o www/api-docs",

@@ -4,20 +4,28 @@ declare(strict_types=1);
 
 namespace App\ApiModule\Presenters;
 
+use App\ApiModule\Models\ApiResponse;
 use Nette\Application\ApplicationException;
 
 
 class SimpleAjaxPresenter extends BasePresenter
 {
 	/**
-	 * @api            {get} /simple-ajax/test/ Test Nette connection
-	 * @apiDescription This method is only for testing.
-	 * @apiVersion     1.0.0
-	 * @apiName        Test
-	 * @apiGroup       SimpleAjax
+	 * @api              {get} /simple-ajax/test/ Test Nette connection
+	 * @apiDescription   This method is only for testing.
+	 * @apiVersion       1.0.0
+	 * @apiName          Test
+	 * @apiGroup         SimpleAjax
+	 * @apiUse           StatusField
 	 *
-	 * @apiSuccess {String} output Test output created by Nette.
-	 * @apiUse         ErrorResponse
+	 * @apiSuccess (data) {String} output Test output created by Nette.
+	 *
+	 * @apiUse           ErrorResponse
+	 */
+
+	/**
+	 * @return void
+	 * @throws \Nette\Application\AbortException
 	 */
 	public function actionTest(): void
 	{
@@ -31,13 +39,9 @@ class SimpleAjaxPresenter extends BasePresenter
 				throw new ApplicationException('Test exception was thrown :)');
 			}
 
-			$response = [
-				'output' => 'All works great! #' . $randomNum,
-			];
+			$response = ApiResponse::build(ApiResponse::STATUS_OK, ['output' => 'All works great! #' . $randomNum]);
 		} catch (ApplicationException $e) {
-			$response = [
-				'message' => $e->getMessage(),
-			];
+			$response = ApiResponse::build(ApiResponse::STATUS_ERROR, [], $e->getMessage());
 		}
 
 		$this->sendJson($response);

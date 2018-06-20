@@ -37,12 +37,7 @@ export default {
   },
   methods: {
     processTestForm: function () {
-      const formData = new FormData();
-      formData.append('name', this.formTest.name);
-      formData.append('email', this.formTest.email);
-      formData.append('message', this.formTest.message);
-
-      this.$http.post(this.$apiUrl + '/simple-form/test/', formData).then(response => {
+      this.$http.post(this.$apiUrl + '/simple-form/test/', this.formTest).then(response => {
         this.formTestResponse = response.body;
       });
     },

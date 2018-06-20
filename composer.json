@@ -1,10 +1,13 @@
 {
     "name": "misaon/nettpack-vue",
-    "description": "Nette 3, Vue.js and Webpack 4 web project",
+    "description": "Nette 3, Docker, Vue and Webpack 4 web project",
     "keywords": [
-        "vue.js",
         "nette",
-        "webpack"
+        "framework",
+        "docker",
+        "webpack",
+        "vue",
+        "api"
     ],
     "type": "project",
     "license": "MIT",
@@ -22,7 +25,6 @@
         "nette/robot-loader": "^3.0",
         "nette/security": "^3.0",
         "nette/utils": "^3.0",
-        "latte/latte": "^3.0",
         "tracy/tracy": "^2.5",
         "justinrainbow/json-schema": "^5.0"
     },

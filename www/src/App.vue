@@ -26,8 +26,8 @@ export default {
   name: 'App',
   metaInfo: {
     title: 'Welcome',
-    titleTemplate: '%s | Nettpack'
-  }
+    titleTemplate: '%s | Nettpack',
+  },
 };
 </script>
 

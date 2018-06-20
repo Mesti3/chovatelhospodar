@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import VueMeta from 'vue-meta'
+import VueMeta from 'vue-meta';
 import VueResource from 'vue-resource';
 
 /**
