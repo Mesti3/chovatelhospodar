@@ -25,7 +25,7 @@ module.exports = (env, argv) => {
     output: {
       publicPath: '',
       path: paths.www,
-      filename: 'dist/[name].min.js',
+      filename: 'dist/' + (isDevMode(argv) ? '[name].min.js' : '[name].[hash].min.js'),
     },
 
     module: {
@@ -42,16 +42,37 @@ module.exports = (env, argv) => {
         },
 
         {
+          test: /\.css$/,
+          use: [
+            isDevMode(argv) ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
+          ],
+        },
+
+        {
           test: /\.scss$/,
           use: [
             isDevMode(argv) ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
-            'css-loader', {
+            'css-loader',
+            {
               loader: 'sass-loader',
               options: {
                 importer: NodeSassMagicImporter(),
               },
             },
           ],
+        },
+
+        {
+          test: /\.(ttf|eot|woff|woff2)$/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'dist/fonts/',
+              publicPath: (isDevMode(argv) ? 'dist/' : '') + 'fonts/',
+            },
+          },
         },
       ],
     },
@@ -95,8 +116,8 @@ module.exports = (env, argv) => {
 
   if (!isDevMode(argv)) {
     config.plugins.push(new MiniCssExtractPlugin({
-      filename: 'dist/[name].min.css',
-      chunkFilename: '[id].min.css',
+      filename: 'dist/' + (isDevMode(argv) ? '[name].min.css' : '[name].[hash].min.css'),
+      chunkFilename: 'dist/' + (isDevMode(argv) ? '[name].min.css' : '[name].[hash].min.css'),
     }));
 
     config.optimization.minimizer = [
@@ -125,4 +146,3 @@ module.exports = (env, argv) => {
 
   return config;
 };
-
