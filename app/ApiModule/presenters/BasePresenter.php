@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\ApiModule\Presenters;
 
 use Nette;
+use Nette\Application\Responses;
 use Tracy\Debugger;
 
 
@@ -58,6 +59,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
 	/**
 	 * @return void
+	 * @throws Nette\Application\AbortException
 	 */
 	public function beforeRender(): void
 	{
@@ -66,6 +68,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		/**
 		 * Set Webpack generated HTML as output.
 		 */
-		$this->template->setFile(__DIR__ . '/../../www/build.html');
+		$response = new Responses\TextResponse(Nette\Utils\FileSystem::read(__DIR__ . '/../../../www/build.html'));
+		$this->sendResponse($response);
 	}
 }
